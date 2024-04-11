@@ -4,8 +4,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2Vpbm5hIiwiYSI6ImNsdWx1Nnl1ZTE1enkya28xc3gxe
 var mapOptions = {
     container: 'map-container', // container ID
     style: 'mapbox://styles/mapbox/dark-v11', // dark basemap
-    center: [10, 40], // starting position [lng, lat]
-    zoom: 3, // starting zoom,
+    center: [12.72369, 46.62962], // starting position [lng, lat]
+    zoom: 3.3, // starting zoom,
     projection: 'globe',
     height: 3,
 }
@@ -30,7 +30,7 @@ const spinEnabled = true;
 function spinGlobe() {
     const zoom = map.getZoom();
     if (spinEnabled && !userInteracting && zoom < maxSpinZoom) {
-        let distancePerSecond = 360 / secondsPerRevolution;
+        let distancePerSecond = 250 / secondsPerRevolution;
         if (zoom > slowSpinZoom) {
             // Slow spinning at higher zooms
             const zoomDif =

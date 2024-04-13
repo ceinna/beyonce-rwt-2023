@@ -100,8 +100,8 @@ map.on('load', function () {
             `Beyoncé  first performed in ${tourDate.City}, ${tourDate.Country} on ${tourDate["First Date"]}. Recorded attendance for all nights performed was ${tourDate.Attendance} which earned her ${tourDate.Revenue} in revenue.`
         );
 
-         // Add a marker for each data point
-         map.addLayer({
+        // Add a marker for each data point
+        map.addLayer({
             id: tourDate["First Date"],
             type: 'symbol',
             source: {
@@ -118,6 +118,14 @@ map.on('load', function () {
                 'icon-image': iconImage,
                 'icon-size': 0.025
             }
+
         });
-    });
+            map.on('click', tourDate["First Date"], function (e) {
+                new mapboxgl.Popup()
+                    .setLngLat(e.features[0].geometry.coordinates)
+                    .setText(`Beyoncé  first performed in ${tourDate.City}, ${tourDate.Country} on ${tourDate["First Date"]}. Recorded attendance for all nights performed was ${tourDate.Attendance} which earned her ${tourDate.Revenue} in revenue.`)
+                    .addTo(map);
+
+            });
+});
 });

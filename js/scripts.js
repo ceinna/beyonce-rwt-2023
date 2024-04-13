@@ -68,47 +68,59 @@ spinGlobe();
 // TRYING TO 1. UPLOAD TWO IMAGES FOR TWO MAKERS AND...
 // 2. HAVE THE MARKERS DISPLAYED BASED ON DIFFERENT CRITERIA (NUMBER OF NIGHTS PERFORMED)
 
-map.loadImage('https://i.postimg.cc/dDcq7dt5/silver-disco.png', function (error, image1) {
-    if (error) throw error;
-    map.addImage('silver-disco', image1); // 'silver-disco' is the image ID for icon 1
+// Iterate over the beyonceData array and display image icons based on criteria
+// Once the map is loaded, add the markers based on the data
+map.on('load', function () {
+    map.loadImage('https://i.postimg.cc/dDcq7dt5/silver-disco.png', function (error, image1) {
+        if (error) throw error;
+        map.addImage('silver-disco', image1); // 'silver-disco' is the image ID for icon 1
+    });
+
+    // Add custom image 2 as a map sprite
+    map.loadImage('https://i.postimg.cc/jjXRLGyJ/gold-disco.png', function (error, image2) {
+        if (error) throw error;
+        map.addImage('gold-disco', image2); // 'gold-disco' is the image ID for icon 2
+    });
+
+
+    // Iterate over the beyonceData array
+    beyonceData.forEach(tourDate => {
+        // Determine the image icon based on the criteria
+        let iconImage;
+        if (tourDate.Nights === 1) {
+            iconImage = 'silver-disco'; // Custom image icon 1
+        } else {
+            iconImage = 'gold-disco'; // Custom image icon 2
+        }
+
+        // create a popup to attach to the marker
+        const popup = new mapboxgl.Popup({
+            offset: 24,
+            anchor: 'bottom'
+        }).setText(
+            `Beyoncé  first performed in ${tourDate.City}, ${tourDate.Country} on ${tourDate["First Date"]}. Recorded attendance for all nights performed was ${tourDate.Attendance} which earned her ${tourDate.Revenue} in revenue.`
+        );
+
+        // Add a marker for each data point
+        new mapboxgl.Marker({
+            color: '#FFFFFF', // Change marker color if needed
+            draggable: false,
+            // Set the marker's position and icon image
+            // You can adjust the coordinates if your data has different coordinates
+            // Also, make sure to add custom marker images to your Mapbox style with the specified image IDs
+            // Replace 'custom-marker1' and 'custom-marker2' with your actual image IDs
+            element: map.makeIcon(iconImage),
+            anchor: 'bottom',
+            scale: 0.5 // Adjust the scale as needed
+        })
+            .setLngLat([tourDate.Longitude, tourDate.Latitude])
+            .addTo(map);
+    });
 });
 
-// Add custom image 2 as a map sprite
-map.loadImage('https://i.postimg.cc/jjXRLGyJ/gold-disco.png', function (error, image2) {
-    if (error) throw error;
-    map.addImage('gold-disco', image2); // 'gold-disco' is the image ID for icon 2
-});
 
-// loop over the beyonceData array to make a marker for each record
-beyonceData.forEach(function (tourDate) {
 
-    var marker
 
-    // use if statements to assign colors based on beyonceData.program
-    if (tourDate.Nights === 1) {
-         'silver-disco'
-    }
-    if (tourDate.Nights != 1) {
-        'gold-disco'
-    }
-
-    // create a popup to attach to the marker
-    const popup = new mapboxgl.Popup({
-        offset: 24,
-        anchor: 'bottom'
-    }).setText(
-        `Beyoncé  first performed in ${tourDate.City}, ${tourDate.Country} on ${tourDate["First Date"]}. Recorded attendance for all nights performed was ${tourDate.Attendance} which earned her ${tourDate.Revenue} in revenue.`
-    );
-
-// create a marker, set the coordinates, add the popup, add it to the map
-new mapboxgl.Marker({
-    scale: 0.65,
-    image: marker
-})
-    .setLngLat([tourDate.Longitude, tourDate.Latitude])
-    .setPopup(popup)
-    .addTo(map);
-})
 
 
 

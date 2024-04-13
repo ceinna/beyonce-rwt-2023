@@ -101,23 +101,27 @@ map.on('load', function () {
             `Beyoncé  first performed in ${tourDate.City}, ${tourDate.Country} on ${tourDate["First Date"]}. Recorded attendance for all nights performed was ${tourDate.Attendance} which earned her ${tourDate.Revenue} in revenue.`
         );
 
-        // Add a marker for each data point
-        new mapboxgl.Marker({
-            color: '#FFFFFF', // Change marker color if needed
-            draggable: false,
-            // Set the marker's position and icon image
-            // You can adjust the coordinates if your data has different coordinates
-            // Also, make sure to add custom marker images to your Mapbox style with the specified image IDs
-            // Replace 'custom-marker1' and 'custom-marker2' with your actual image IDs
-            element: map.makeIcon(iconImage),
-            anchor: 'bottom',
-            scale: 0.5 // Adjust the scale as needed
-        })
-            .setLngLat([tourDate.Longitude, tourDate.Latitude])
-            .addTo(map);
+         // Add a marker for each data point
+         map.addLayer({
+            id: tourDate["First Date"],
+            type: 'symbol',
+            source: {
+                type: 'geojson',
+                data: {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [tourDate.Longitude, tourDate.Latitude]
+                    }
+                }
+            },
+            layout: {
+                'icon-image': iconImage,
+                'icon-size': 0.05
+            }
+        });
     });
 });
-
 
 
 

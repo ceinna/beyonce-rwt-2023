@@ -117,7 +117,7 @@ map.on('load', function () {
             },
             layout: {
                 'icon-image': iconImage,
-                'icon-size': 0.05
+                'icon-size': 0.025
             }
         });
     });

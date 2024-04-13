@@ -68,78 +68,175 @@ spinGlobe();
 // TRYING TO 1. UPLOAD TWO IMAGES FOR TWO MAKERS AND...
 // 2. HAVE THE MARKERS DISPLAYED BASED ON DIFFERENT CRITERIA (NUMBER OF NIGHTS PERFORMED)
 
+map.loadImage('https://i.postimg.cc/dDcq7dt5/silver-disco.png', function (error, image1) {
+    if (error) throw error;
+    map.addImage('silver-disco', image1); // 'silver-disco' is the image ID for icon 1
+});
+
+// Add custom image 2 as a map sprite
+map.loadImage('https://i.postimg.cc/jjXRLGyJ/gold-disco.png', function (error, image2) {
+    if (error) throw error;
+    map.addImage('gold-disco', image2); // 'gold-disco' is the image ID for icon 2
+});
+
+// loop over the beyonceData array to make a marker for each record
 beyonceData.forEach(function (tourDate) {
-    // Criteria for differentiating markers
-    const criteria1 = tourDate.Nights === 1; // Example criteria
-    const criteria2 = tourDate.Nights != 1; // Example criteria
 
-    // Data containing coordinates and criteria
-    const data = [
-        { coordinates: [tourDate.Longitude, tourDate.Latitude], criteria: criteria1 },
-        { coordinates: [tourDate.Longitude, tourDate.Latitude], criteria: criteria2 },
-        // Add more data as needed
-    ];
+    var marker
 
-    // Iterate over data to create GeoJSON objects
-    const features = data.map(item => ({
-        type: 'Feature',
-        geometry: {
-            type: 'Point',
-            coordinates: item.coordinates
-        },
-        properties: {
-            criteria: item.criteria
-        }
-    }));
-});
+    // use if statements to assign colors based on beyonceData.program
+    if (tourDate.Nights === 1) {
+         'silver-disco'
+    }
+    if (tourDate.Nights != 1) {
+        'gold-disco'
+    }
 
-// Add layers to the map
-map.on('load', function () {
+    // create a popup to attach to the marker
+    const popup = new mapboxgl.Popup({
+        offset: 24,
+        anchor: 'bottom'
+    }).setText(
+        `Beyoncé  first performed in ${tourDate.City}, ${tourDate.Country} on ${tourDate["First Date"]}. Recorded attendance for all nights performed was ${tourDate.Attendance} which earned her ${tourDate.Revenue} in revenue.`
+    );
 
-    map.loadImage('https://i.postimg.cc/5tvFTNdW/silver-disco.jpg', function (error, image) {
-        if (error) throw error;
-        map.addImage('silver-disco', image)
-    }); // 'silver-disco' is the image ID
+// create a marker, set the coordinates, add the popup, add it to the map
+new mapboxgl.Marker({
+    scale: 0.65,
+    image: marker
+})
+    .setLngLat([tourDate.Longitude, tourDate.Latitude])
+    .setPopup(popup)
+    .addTo(map);
+})
 
-    map.loadImage('https://i.postimg.cc/jjXRLGyJ/gold-disco.png', function (error, image) {
-        if (error) throw error;
-        map.addImage('gold-disco', image) // 'gold-disco' is the image ID
-    });
 
-    // Add layer for criteria1 markers
-    map.addLayer({
-        id: 'criteria1-markers',
-        type: 'symbol',
-        source: {
-            type: 'geojson',
-            data: {
-                type: 'FeatureCollection',
-                features: features.filter(feature => feature.properties.criteria === criteria1)
-            }
-        },
-        layout: {
-            'icon-image': 'silver-disco', // Image for criteria1 markers
-            'icon-size': 1.5
-        }
-    });
 
-    // Add layer for criteria2 markers
-    map.addLayer({
-        id: 'criteria2-markers',
-        type: 'symbol',
-        source: {
-            type: 'geojson',
-            data: {
-                type: 'FeatureCollection',
-                features: features.filter(feature => feature.properties.criteria === criteria2)
-            }
-        },
-        layout: {
-            'icon-image': 'gold-disco', // Image for criteria2 markers
-            'icon-size': 1.5
-        }
-    });
-});
+// OLD TRY #2
+
+// map.on('load', function () {
+//     // Add custom image 1 as a map sprite
+//     map.loadImage('https://i.postimg.cc/dDcq7dt5/silver-disco.png', function (error, image1) {
+//         if (error) throw error;
+//         map.addImage('silver-disco', image1); // 'silver-disco' is the image ID for icon 1
+//     });
+
+//     // Add custom image 2 as a map sprite
+//     map.loadImage('https://i.postimg.cc/jjXRLGyJ/gold-disco.png', function (error, image2) {
+//         if (error) throw error;
+//         map.addImage('gold-disco', image2); // 'gold-disco' is the image ID for icon 2
+//     });
+
+//     // Add a layer with custom image markers
+//     map.addLayer({
+//         id: 'custom-marker-layer',
+//         type: 'symbol',
+//         source: {
+//             type: 'geojson',
+//             data: {
+//                 type: 'FeatureCollection',
+//                 features: [{
+//                     type: 'Feature',
+//                     geometry: {
+//                         type: 'Point',
+//                         coordinates: [-74.5, 40]
+//                     },
+//                     properties: {
+//                         // Assuming 'variable' holds the value
+//                         variable: 1 // or any other value
+//                     }
+//                 }]
+//             }
+//         },
+//         layout: {
+//             'icon-image': [
+//                 'case',
+//                 ['==', ['get', 'variable'], 1], 'silver-disco', // Display custom image 1 if variable equals 1
+//                 'gold-disco' // Otherwise, display custom image 2
+//             ],
+//             'icon-size': 1.5
+//         }
+//     });
+// });
+
+
+
+
+
+
+// OLD TRY #1
+// beyonceData.forEach(function (tourDate) {
+//     // Criteria for differentiating markers
+//     const criteria1 = tourDate.Nights === 1; // Example criteria
+//     const criteria2 = tourDate.Nights != 1; // Example criteria
+
+//     // Data containing coordinates and criteria
+//     const data = [
+//         { coordinates: [tourDate.Longitude, tourDate.Latitude], criteria: criteria1 },
+//         { coordinates: [tourDate.Longitude, tourDate.Latitude], criteria: criteria2 },
+//         // Add more data as needed
+//     ];
+
+//     // Iterate over data to create GeoJSON objects
+//     const features = data.map(item => ({
+//         type: 'Feature',
+//         geometry: {
+//             type: 'Point',
+//             coordinates: item.coordinates
+//         },
+//         properties: {
+//             criteria: item.criteria
+//         }
+//     }));
+// });
+
+// // Add layers to the map
+// map.on('load', function () {
+
+//     map.loadImage('https://i.postimg.cc/dDcq7dt5/silver-disco.png', function (error, image) {
+//         if (error) throw error;
+//         map.addImage('silver-disco', image)
+//     }); // 'silver-disco' is the image ID
+
+//     map.loadImage('https://i.postimg.cc/jjXRLGyJ/gold-disco.png', function (error, image) {
+//         if (error) throw error;
+//         map.addImage('gold-disco', image) // 'gold-disco' is the image ID
+//     });
+
+//     // Add layer for criteria1 markers
+//     map.addLayer({
+//         id: 'criteria1-markers',
+//         type: 'symbol',
+//         source: {
+//             type: 'geojson',
+//             data: {
+//                 type: 'FeatureCollection',
+//                 features: features.filter(feature => feature.properties.criteria === criteria1)
+//             }
+//         },
+//         layout: {
+//             'icon-image': 'silver-disco', // Image for criteria1 markers
+//             'icon-size': 1.5
+//         }
+//     });
+
+//     // Add layer for criteria2 markers
+//     map.addLayer({
+//         id: 'criteria2-markers',
+//         type: 'symbol',
+//         source: {
+//             type: 'geojson',
+//             data: {
+//                 type: 'FeatureCollection',
+//                 features: features.filter(feature => feature.properties.criteria === criteria2)
+//             }
+//         },
+//         layout: {
+//             'icon-image': 'gold-disco', // Image for criteria2 markers
+//             'icon-size': 1.5
+//         }
+//     });
+// });
 
 
 //  THE BELOW CODE WORKS FOR CREATING TWO DIFFERENT COLOR MARKERS BASED ON NUMBER OF NIGHTS PERFORMED

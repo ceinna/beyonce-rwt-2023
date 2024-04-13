@@ -43,7 +43,7 @@ body {
 }
 
 #sidebar .header {
-   display: flex; 
+    display: flex;
 }
 
 #sidebar .disco-emoji {
@@ -75,9 +75,25 @@ body {
 }
 
 .legend-key {
-    display: inline-block;
+    display: flex;
     border-radius: 20%;
-    width: 10px;
-    height: 10px;
+    margin-bottom: 5px;
+}
+
+.legend-key img {
+    height: 15px;
+    width: 15px;
     margin-right: 5px;
+    flex: 0 0 auto;
+}
+
+.legend-key span {
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    overflow: hidden;
+    /* Hide any overflow */
+    text-overflow: ellipsis;
+    /* Add ellipsis for overflow */
+    flex: 1;
+    /* Allow text to take up remaining space */
 }

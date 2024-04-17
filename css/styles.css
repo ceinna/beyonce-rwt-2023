@@ -55,6 +55,7 @@ body {
 #sidebar .source-code-link {
     text-decoration: none;
     font-size: 10px;
+    color: grey
 }
 
 #sidebar .source-code-link:hover {

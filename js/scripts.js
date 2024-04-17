@@ -65,67 +65,73 @@ map.on('moveend', () => {
 spinGlobe();
 
 
-//  UPLOAD TWO IMAGES FOR TWO MAKERS AND HAVE THE MARKERS DISPLAYED BASED ON DIFFERENT CRITERIA (NUMBER OF NIGHTS PERFORMED)
+// //  UPLOAD TWO IMAGES FOR TWO MAKERS AND HAVE THE MARKERS DISPLAYED BASED ON DIFFERENT CRITERIA (NUMBER OF NIGHTS PERFORMED)
 
-// Iterate over the beyonceData array and display image icons based on criteria
-// Once the map is loaded, add the markers based on the data
+// // Iterate over the beyonceData array and display image icons based on criteria
+// // Once the map is loaded, add the markers based on the data
+// map.on('load', function () {
+//     map.loadImage('https://i.postimg.cc/dDcq7dt5/silver-disco.png', function (error, image1) {
+//         if (error) throw error;
+//         map.addImage('silver-disco', image1); // 'silver-disco' is the image ID for icon 1
+//     });
+
+//     // Add custom image 2 as a map sprite
+//     map.loadImage('https://i.postimg.cc/jjXRLGyJ/gold-disco.png', function (error, image2) {
+//         if (error) throw error;
+//         map.addImage('gold-disco', image2); // 'gold-disco' is the image ID for icon 2
+//     });
+
+
+//     // Iterate over the beyonceData array
+//     beyonceData.forEach(tourDate => {
+//         // Determine the image icon based on the criteria
+//         let iconImage;
+//         if (tourDate.Nights === 1) {
+//             iconImage = 'silver-disco'; // Custom image icon 1
+//         } else {
+//             iconImage = 'gold-disco'; // Custom image icon 2
+//         }
+
+//         // Add a marker for each data point
+//         map.addLayer({
+//             id: tourDate["First Date"],
+//             type: 'symbol',
+//             source: {
+//                 type: 'geojson',
+//                 data: {
+//                     type: 'Feature',
+//                     geometry: {
+//                         type: 'Point',
+//                         coordinates: [tourDate.Longitude, tourDate.Latitude]
+//                     }
+//                 }
+//             },
+//             layout: {
+//                 'icon-image': iconImage,
+//                 'icon-size': 0.025
+//             }
+
+//         });
+//             map.on('click', tourDate["First Date"], function (e) {
+//                 new mapboxgl.Popup()
+//                     .setLngLat(e.features[0].geometry.coordinates)
+//                     .setText(`Beyoncé  first performed in ${tourDate.City}, ${tourDate.Country} on ${tourDate["First Date"]}. Recorded attendance for all nights performed was ${tourDate.Attendance} which earned her ${tourDate.Revenue} in revenue.`)
+//                     .addTo(map);
+
+//             });
+// });
+// });
+
 map.on('load', function () {
-    map.loadImage('https://i.postimg.cc/dDcq7dt5/silver-disco.png', function (error, image1) {
-        if (error) throw error;
-        map.addImage('silver-disco', image1); // 'silver-disco' is the image ID for icon 1
-    });
-
-    // Add custom image 2 as a map sprite
-    map.loadImage('https://i.postimg.cc/jjXRLGyJ/gold-disco.png', function (error, image2) {
-        if (error) throw error;
-        map.addImage('gold-disco', image2); // 'gold-disco' is the image ID for icon 2
-    });
-
-
-    // Iterate over the beyonceData array
     beyonceData.forEach(tourDate => {
-        // Determine the image icon based on the criteria
-        let iconImage;
-        if (tourDate.Nights === 1) {
-            iconImage = 'silver-disco'; // Custom image icon 1
-        } else {
-            iconImage = 'gold-disco'; // Custom image icon 2
-        }
+      var imageUrl = tourDate.Nights > 1 ? 'gold-disco.png' : 'silver-disco.png';
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = 'url(' + imageUrl + ')';
 
-        // create a popup to attach to the marker
-        const popup = new mapboxgl.Popup({
-            offset: 24,
-            anchor: 'bottom'
-        }).setText(
-            `Beyoncé  first performed in ${tourDate.City}, ${tourDate.Country} on ${tourDate["First Date"]}. Recorded attendance for all nights performed was ${tourDate.Attendance} which earned her ${tourDate.Revenue} in revenue.`
-        );
-
-        // Add a marker for each data point
-        map.addLayer({
-            id: tourDate["First Date"],
-            type: 'symbol',
-            source: {
-                type: 'geojson',
-                data: {
-                    type: 'Feature',
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [tourDate.Longitude, tourDate.Latitude]
-                    }
-                }
-            },
-            layout: {
-                'icon-image': iconImage,
-                'icon-size': 0.025
-            }
-
-        });
-            map.on('click', tourDate["First Date"], function (e) {
-                new mapboxgl.Popup()
-                    .setLngLat(e.features[0].geometry.coordinates)
-                    .setText(`Beyoncé  first performed in ${tourDate.City}, ${tourDate.Country} on ${tourDate["First Date"]}. Recorded attendance for all nights performed was ${tourDate.Attendance} which earned her ${tourDate.Revenue} in revenue.`)
-                    .addTo(map);
-
-            });
-});
+      new mapboxgl.Marker(el)
+        .setLngLat([tourDate.Longitude, tourDate.Latitude])
+        .setPopup(new mapboxgl.Popup().setHTML('Beyoncé  first performed in ' + tourDate.City +', '+ tourDate.Country + ' on ' + tourDate["First Date"] + '. Recorded attendance for all nights performed was ' + tourDate.Attendance + ' which earned her ' + tourDate.Revenue + ' in revenue.'))
+        .addTo(map);
+    });
 });

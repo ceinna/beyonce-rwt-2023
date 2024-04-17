@@ -97,3 +97,10 @@ body {
     flex: 1;
     /* Allow text to take up remaining space */
 }
+
+.marker {
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }

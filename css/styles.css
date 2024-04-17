@@ -1,3 +1,4 @@
+/* GENERAL FORMATTING */
 * {
     font-family: sans-serif;
 }
@@ -7,6 +8,7 @@ body {
     padding: 0;
 }
 
+/* MAP FORMATTING */
 #map-container {
     position: absolute;
     top: 0;
@@ -22,6 +24,8 @@ body {
     padding: 10px;
 }
 
+
+/* SIDEBAR FORMATTING */
 #sidebar {
     position: absolute;
     top: 20px;
@@ -63,7 +67,7 @@ body {
     font-size: 10px;
 }
 
-/* legend styles from https://docs.mapbox.com/help/tutorials/choropleth-studio-gl-pt-1/ */
+/* LEGEND WITHIN SIDEBAR FORMATTING */
 .legend {
     padding: 10px;
     box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
@@ -99,6 +103,8 @@ body {
     /* Allow text to take up remaining space */
 }
 
+
+/* ICON MARKERS FORMATTING */
 .marker {
     background-size: cover;
     width: 25px;
@@ -106,6 +112,8 @@ body {
     cursor: pointer;
 }
 
+
+/* BUTTONS UNDER THE SIDEBAR FORMATTING */
 #north-america {
     display: block;
     position: fixed;
@@ -120,7 +128,8 @@ body {
     color: black;
     background: silver;
     z-index: 10000;
-    bottom: 275px;
+    bottom: 280px;
+    /* distance from bottom: helps place button directly under sidebar*/
     left: 20px;
     border-radius: 5px;
 }
@@ -139,7 +148,8 @@ body {
     color: black;
     background: silver;
     z-index: 10000;
-    bottom: 225px;
+    bottom: 230px;
+    /* distance from bottom: helps place button directly under sidebar & NA button*/
     left: 20px;
     border-radius: 5px;
 }

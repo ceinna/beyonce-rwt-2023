@@ -56,12 +56,6 @@ map.on('mousedown', () => {
     userInteracting = true;
 });
 
-// Restart spinning the globe when interaction is complete
-map.on('mouseup', () => {
-    userInteracting = false;
-    spinGlobe();
-});
-
 // These events account for cases where the mouse has moved
 // off the map, so 'mouseup' will not be fired.
 map.on('dragend', () => {
@@ -99,7 +93,7 @@ map.on('load', function () {
 
         new mapboxgl.Marker(el)
             .setLngLat([tourDate.Longitude, tourDate.Latitude])
-            .setPopup(new mapboxgl.Popup().setHTML('Beyoncé  first performed in ' + tourDate.City + ', ' + tourDate.Country + ' on ' + tourDate["First Date"] + '. Recorded attendance for all nights performed was ' + tourDate.Attendance + ' which earned her ' + tourDate.Revenue + ' in revenue.'))
+            .setPopup(new mapboxgl.Popup().setHTML('Beyoncé  first performed in <b>' + tourDate.City + ', ' + tourDate.Country + '</b> on <b>' + tourDate["First Date"] + '</b>. Recorded attendance for all nights performed was <b>' + tourDate.Attendance + '</b> which earned her <b>' + tourDate.Revenue + '</b> in revenue.'))
             .addTo(map);
     });
 });

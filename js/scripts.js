@@ -104,7 +104,7 @@ map.on('load', function () {
 // ADD FUNCTIONALITY TO BUTTONS
 
 // For the button with a North America ID, when clicked will fly to center the United States
-document.getElementById('north-america').addEventListener('click', () => {
+document.getElementById('northAmerica').addEventListener('click', () => {
     userInteracting = true,
         // Fly to a random location
         map.flyTo({

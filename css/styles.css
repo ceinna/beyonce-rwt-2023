@@ -104,4 +104,42 @@ body {
     width: 25px;
     height: 25px;
     cursor: pointer;
-  }
+}
+
+#north-america {
+    display: block;
+    position: fixed;
+    margin: 0px auto;
+    width: 360px;
+    height: 40px;
+    padding: 15px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: black;
+    background: silver;
+    z-index: 10000;
+    bottom: 275px;
+    left: 20px;
+    border-radius: 5px;
+}
+
+#europe {
+    display: block;
+    position: fixed;
+    margin: 0px auto;
+    width: 360px;
+    height: 40px;
+    padding: 15px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: black;
+    background: silver;
+    z-index: 10000;
+    bottom: 225px;
+    left: 20px;
+    border-radius: 5px;
+}

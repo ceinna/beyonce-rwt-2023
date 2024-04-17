@@ -135,3 +135,19 @@ map.on('load', function () {
         .addTo(map);
     });
 });
+
+document.getElementById('north-america').addEventListener('click', () => {
+    // Fly to a random location
+    map.flyTo({
+        center: [-104.60460, 40.09066],
+        essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    });
+});
+
+document.getElementById('europe').addEventListener('click', () => {
+    // Fly to a random location
+    map.flyTo({
+        center: [4.70531, 48.18800],
+        essential: true // this animation is considered essential with respect to prefers-reduced-motion
+    });
+});

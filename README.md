@@ -2,7 +2,7 @@
 
 This is a repo of code for the third assignment for the Advanced GIS: Interactive Web Mapping and Spatial Data Visualization course at NYU Wagner, Spring 2024.
 
-A dataset was generated using Wikipedia data for the [2023 Beyoncé Renaissance World Tour] (https://en.wikipedia.org/wiki/Renaissance_World_Tour) (see: Tour Dates section). 
+A dataset was generated using Wikipedia data for the [2023 Beyoncé Renaissance World Tour](https://en.wikipedia.org/wiki/Renaissance_World_Tour) [see: Tour Dates section]. 
 
 A color key was generated based off of total nights performed at a given venue, but the original idea was to have the key based off whether the 'Big Three' ( “Drunk in Love,” “Thique,” and “All Up In Your Mind”) were performed or not. Beyoncé only performed them at a handful of shows, including Atlanta, Houston, and Los Angeles.
 A reputable source could not be located to determine the venues thses songs were performed at, so the idea was scrapped.

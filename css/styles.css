@@ -118,18 +118,68 @@ body {
     display: block;
     position: fixed;
     margin: 0px auto;
-    width: 360px;
+    width: 250px;
     height: 40px;
     padding: 15px;
     border: none;
-    border-radius: 3px;
     font-size: 12px;
     text-align: center;
-    color: black;
-    background: silver;
     z-index: 10000;
-    bottom: 280px;
+    bottom: 40px;
     /* distance from bottom: helps place button directly under sidebar*/
-    left: 20px;
-    border-radius: 5px;
+    right: 20px;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button:before {
+    content: "";
+    background: linear-gradient(45deg,
+            gold,
+            black,
+            silver);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
 }

@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2Vpbm5hIiwiYSI6ImNsdWx1Nnl1ZTE1enkya28xc3gxe
 
 // ---------------------------------------------------------------
 
-// ADD FUNCTIONALITY TO BASE MAP: SPINNING GLOBE ZOOMED IN ON NORTHERN HEMISPHERE
+// ADD BASE MAP AND FUNCTIONALITY
 
 var mapOptions = {
     container: 'map-container', // container ID
@@ -13,6 +13,7 @@ var mapOptions = {
     zoom: 3.8, // starting zoom,
     projection: 'globe',
     height: 3,
+    interactive: false //make map static
 }
 
 // instantiate the map
@@ -21,63 +22,6 @@ const map = new mapboxgl.Map(mapOptions);
 // add a navitation control
 const nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'top-right');
-
-// At low zooms, complete a revolution every two minutes.
-const secondsPerRevolution = 75;
-// Above zoom level 5, do not rotate.
-const maxSpinZoom = 5;
-// Rotate at intermediate speeds between zoom levels 3 and 5.
-const slowSpinZoom = 3;
-
-let userInteracting = false;
-const spinEnabled = true;
-
-// Function to rotate globe
-function spinGlobe() {
-    const zoom = map.getZoom();
-    if (spinEnabled && !userInteracting && zoom < maxSpinZoom) {
-        let distancePerSecond = 360 / secondsPerRevolution;
-        if (zoom > slowSpinZoom) {
-            // Slow spinning at higher zooms
-            const zoomDif =
-                (maxSpinZoom - zoom) / (maxSpinZoom - slowSpinZoom);
-            distancePerSecond *= zoomDif;
-        }
-        const center = map.getCenter();
-        center.lng -= distancePerSecond;
-        // Smoothly animate the map over one second.
-        // When this animation is complete, it calls a 'moveend' event.
-        map.easeTo({ center, duration: 1000, easing: (n) => n });
-    }
-}
-
-// Pause spinning on interaction
-map.on('mousedown', () => {
-    userInteracting = true;
-});
-
-// These events account for cases where the mouse has moved
-// off the map, so 'mouseup' will not be fired.
-map.on('dragend', () => {
-    userInteracting = false;
-    spinGlobe();
-});
-map.on('pitchend', () => {
-    userInteracting = false;
-    spinGlobe();
-});
-map.on('rotateend', () => {
-    userInteracting = false;
-    spinGlobe();
-});
-
-// When animation is complete, start spinning if there is no ongoing interaction
-map.on('moveend', () => {
-    spinGlobe();
-});
-
-// When page is loaded, globe will spin as a default
-spinGlobe();
 
 
 // ---------------------------------------------------------------
@@ -91,9 +35,16 @@ map.on('load', function () {
         el.className = 'marker';
         el.style.backgroundImage = 'url(' + imageUrl + ')';
 
+        // Create a popup content string with HTML markup
+        var popupContent = `<h3>Venue Details</h3>` +
+            `<p><strong>City, Country:</strong> ${tourDate.City},  ${tourDate.Country} </p>` +
+            `<p><strong>First performance date:</strong> ${tourDate["First Date"]}</p>` +
+            `<p><strong>Total recorded attendance:</strong> ${tourDate.Attendance}</p>` +
+            `<p><strong>Total revenue earned:</strong> ${tourDate.Revenue}</p>`;
+
         new mapboxgl.Marker(el)
             .setLngLat([tourDate.Longitude, tourDate.Latitude])
-            .setPopup(new mapboxgl.Popup().setHTML('Beyoncé  first performed in <b>' + tourDate.City + ', ' + tourDate.Country + '</b> on <b>' + tourDate["First Date"] + '</b>. Recorded attendance for all nights performed was <b>' + tourDate.Attendance + '</b> which earned her <b>' + tourDate.Revenue + '</b> in revenue.'))
+            .setPopup(new mapboxgl.Popup().setHTML(popupContent))
             .addTo(map);
     });
 });

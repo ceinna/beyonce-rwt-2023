@@ -65,24 +65,35 @@ body {
 #sidebar .source-code-link:hover {
     text-decoration: underline;
     font-size: 10px;
+    color: black
 }
 
 /* LEGEND WITHIN SIDEBAR FORMATTING */
 .legend {
+    position: absolute;
+    float: right;
+    top: 70%;
     padding: 10px;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+    bottom: 20 px;
+    right: 15px;
+    width: 238px;
+    z-index: 1;
     line-height: 18px;
     margin-bottom: 12px;
-    border: 1px solid #ccc;
-    background: white;
     border-radius: 5px;
     font-size: 12px;
+    color: white
+}
+
+h3 {
+    margin-top: 0;
 }
 
 .legend-key {
     display: flex;
     border-radius: 20%;
-    margin-bottom: 5px;
+    line-height: 15px;
+    margin-bottom: 10px;
 }
 
 .legend-key img {
@@ -138,7 +149,7 @@ body {
     touch-action: manipulation;
 }
 
-.button:before {
+.button:before, .legend:before {
     content: "";
     background: linear-gradient(45deg,
             gold,
@@ -172,7 +183,7 @@ body {
     }
 }
 
-.button:after {
+.button:after, .legend:after {
     z-index: -1;
     content: "";
     position: absolute;

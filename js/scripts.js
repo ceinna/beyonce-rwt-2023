@@ -60,8 +60,8 @@ button.addEventListener('click', function () {
     // Map starts centered on Europe. Button will first read, 'Jump to NA Tour Locations' and when pressed, will do so
     if (isNorthAmerica) {
         map.flyTo({
-            center: [-107.20676, 40.09066],
-            zoom: 3.8
+            center: [-103, 40.09066],
+            zoom: 3.5
         });
         button.innerHTML = 'Jump to European Tour Locations';
         isNorthAmerica = false;

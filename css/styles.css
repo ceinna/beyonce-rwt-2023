@@ -114,7 +114,7 @@ body {
 
 
 /* BUTTONS UNDER THE SIDEBAR FORMATTING */
-#northAmerica {
+#toggleButton {
     display: block;
     position: fixed;
     margin: 0px auto;
@@ -130,26 +130,6 @@ body {
     z-index: 10000;
     bottom: 280px;
     /* distance from bottom: helps place button directly under sidebar*/
-    left: 20px;
-    border-radius: 5px;
-}
-
-#europe {
-    display: block;
-    position: fixed;
-    margin: 0px auto;
-    width: 360px;
-    height: 40px;
-    padding: 15px;
-    border: none;
-    border-radius: 3px;
-    font-size: 12px;
-    text-align: center;
-    color: black;
-    background: silver;
-    z-index: 10000;
-    bottom: 230px;
-    /* distance from bottom: helps place button directly under sidebar & NA button*/
     left: 20px;
     border-radius: 5px;
 }

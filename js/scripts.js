@@ -52,27 +52,26 @@ map.on('load', function () {
 
 // ---------------------------------------------------------------
 
-// ADD FUNCTIONALITY TO BUTTONS
+// ADD TOGGLE FUNCTIONALITY TO BUTTONS
+var button = document.getElementById('toggleButton');
+var isNorthAmerica = true;
 
-// For the button with a North America ID, when clicked will fly to center the United States
-document.getElementById('northAmerica').addEventListener('click', () => {
-    userInteracting = true,
-        // Fly to a random location
+button.addEventListener('click', function () {
+    // Map starts centered on Europe. Button will first read, 'Jump to NA Tour Locations' and when pressed, will do so
+    if (isNorthAmerica) {
         map.flyTo({
             center: [-107.20676, 40.09066],
-            zoom: 3.8,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            zoom: 3.8
         });
-
-});
-
-// For the button with a European ID, when clicked will fly to center the Europe
-document.getElementById('europe').addEventListener('click', () => {
-    userInteracting = true,
-        // Fly to a random location
+        button.innerHTML = 'Jump to European Tour Locations';
+        isNorthAmerica = false;
+        // Once pressed, button will read 'Jump to European Tour Locations' and when pressed will do so. Button will toggle back and forth with these commands
+    } else {
         map.flyTo({
             center: [6.46103, 49.92353],
-            zoom: 3.9,
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            zoom: 3.9
         });
+        button.innerHTML = 'Jump to North America Tour Locations';
+        isNorthAmerica = true;
+    }
 });

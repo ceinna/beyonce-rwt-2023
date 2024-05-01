@@ -30,7 +30,7 @@ map.addControl(nav, 'top-right');
 
 map.on('load', function () {
     beyonceData.forEach(tourDate => {
-        var imageUrl = tourDate.Nights > 1 ? 'gold-disco.png' : 'silver-disco.png';
+        var imageUrl = tourDate.Nights > 1 ? 'images/gold-disco.png' : 'images/silver-disco.png';
         var el = document.createElement('div');
         el.className = 'marker';
         el.style.backgroundImage = 'url(' + imageUrl + ')';

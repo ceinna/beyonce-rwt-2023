@@ -9,8 +9,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2Vpbm5hIiwiYSI6ImNsdWx1Nnl1ZTE1enkya28xc3gxe
 var mapOptions = {
     container: 'map-container', // container ID
     style: 'mapbox://styles/mapbox/dark-v11', // dark basemap
-    center: [1.39433, 48.04965], // starting position [lng, lat]
-    zoom: 3.8, // starting zoom,
+    center: [1.39433, 50], // starting position [lng, lat]
+    zoom: 4, // starting zoom,
     projection: 'globe',
     height: 3,
     interactive: false //make map static
@@ -68,8 +68,8 @@ button.addEventListener('click', function () {
         // Once pressed, button will read 'Jump to European Tour Locations' and when pressed will do so. Button will toggle back and forth with these commands
     } else {
         map.flyTo({
-            center: [6.46103, 49.92353],
-            zoom: 3.9
+            center: [1.39433, 50],
+            zoom: 4
         });
         button.innerHTML = 'Jump to North America Tour Locations';
         isNorthAmerica = true;

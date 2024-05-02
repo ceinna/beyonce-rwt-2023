@@ -22,14 +22,23 @@
         <!-- CONTENT -->
         <div id="content-container">
             <div id="sidebar">
-                <p>In 2023, Beyoncé embarked on a world tour to perform hit songs from her seventh studio album, Act I:
-                    Renaissance.</p>
+                <h2>Welcome to the Renaissance</h2>
+
+                <p>In 2023, Beyoncé embarked on a world tour to perform hit songs from her seventh studio album, <a
+                        class="sidebar-links" href="https://open.spotify.com/album/6FJxoadUE4JNVwWHghBwnb"
+                        target="_blank"><strong>Act I:
+                            Renaissance</strong></a>.<i> Click a marker for details on venues, attendance, and
+                        revenue.</i></p>
+
+                <iframe width="365" height="200" src="https://www.youtube.com/embed/pAzyYLsndCg?controls=0">
+                </iframe>
+
                 <p>The Renaissance World Tour ("RWT") is Beyoncé's highest-grossing tour to date. Her tour, alone,
                     contributed
-                    $4.5 billion to the American economy.<strong> Click a marker for details on venues, attendance, and
-                        revenue.</strong></p>
+                    $4.5 billion to the American economy. </p>
 
-                <button type="button" class="collapsible">Open Collapsible</button>
+                <button type="button" class="collapsible"><strong>See how RWT compares to previous
+                        tours</strong></button>
                 <div class="content">
                     <table>
                         <thead>
@@ -83,43 +92,43 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div>
+                    <a class="source-code-link" href="https://github.com/ceinna/assignment-3" target="_blank">Source
+                        Code</a>
+                </div>
             </div>
-        </div>
-        <div>
-            <a class="source-code-link" href="https://github.com/ceinna/assignment-3">Source Code</a>
+
+            <!-- LEGEND -->
+            <div class="legend">
+                <div>
+                    <h3>Legend</h3>
+                    <div class="legend-key">
+                        <img src="images/silver-disco.png">
+                        <span>Single Performance Venue</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="legend-key">
+                        <img src="images/gold-disco.png">
+                        <span>Multiple Performance Venue</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+
+            <div>
+                <button id="toggleButton" class="button">Jump to North America Tour Locations</button>
+            </div>
+
+            <!-- MAP -->
+            <div id="map-container"></div>
         </div>
     </div>
-
-    <!-- LEGEND -->
-    <div class="legend">
-        <div>
-            <h3>Legend</h3>
-            <div class="legend-key">
-                <img src="images/silver-disco.png">
-                <span>Single Performance Venue</span>
-            </div>
-        </div>
-        <div>
-            <div class="legend-key">
-                <img src="images/gold-disco.png">
-                <span>Multiple Performance Venue</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- BUTTON -->
-
-    <div>
-        <button id="toggleButton" class="button">Jump to North America Tour Locations</button>
-    </div>
-
-    <!-- MAP -->
-    <div id="map-container"></div>
-
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
     <script src="js/beyonce-data.js"></script>
     <script src="js/scripts.js"></script>
-
 </body>
 
 </html>

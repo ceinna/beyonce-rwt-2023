@@ -90,6 +90,16 @@ nav {
     position: relative;
 }
 
+#sidebar .sidebar-links {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#sidebar .sidebar-links:hover{
+    text-decoration: underline;
+    color: black
+}
+
 #sidebar .source-code-link {
     text-decoration: none;
     font-size: 13.5px;
@@ -100,7 +110,7 @@ nav {
 
 #sidebar .source-code-link:hover {
     text-decoration: underline;
-    font-size: 12px;
+    font-size: 13.5px;
     color: black
 }
 
@@ -109,7 +119,7 @@ nav {
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
     background-color: #eee;
-    color: #444;
+    color: #a8a9ad;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -122,11 +132,11 @@ nav {
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .collapsible:hover {
     background-color: grey;
+    color:#ffffff;
   }
   
   /* Style the collapsible content. Note: hidden by default */
   .content {
-    padding: 0 18px;
     background-color: white;
     max-height: 0;
     overflow: hidden;

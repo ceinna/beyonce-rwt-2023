@@ -268,7 +268,7 @@ h3 {
 /* BUTTON FORMATTING */
 #toggleButton {
     display: block;
-    position: fixed;
+    position: absolute;
     margin: 0px auto;
     width: 260px;
     height: 40px;

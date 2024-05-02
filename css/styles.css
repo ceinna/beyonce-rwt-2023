@@ -112,13 +112,13 @@ nav {
 }
 
 #sidebar .sidebar-links {
-    text-decoration: none;
-    color: #ffffff;
+    text-decoration: underline;
+    color: black;
 }
 
 #sidebar .sidebar-links:hover{
     text-decoration: underline;
-    color: black
+    color: white
 }
 
 /* COLLAPSIBLE FORMATTING */

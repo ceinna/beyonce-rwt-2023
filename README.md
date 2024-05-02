@@ -10,7 +10,7 @@ A reputable source could not be located to determine the venues these songs were
 
 In full, a base map was generated and enabled to spin. Two images of silver and gold disco balls (which symbolize the theme of the Beyoncé Renaissance era) were uploaded and given conditions for when to appear as markers. A popup was set up to relay venue and revenue statistics when the disco markers are clicked. And buttons were added so tour locations by continent could be easily jumped to when clicked.
 
-The map can be accessed through the following [link](https://ceinna.github.io/assignment-3/).
+The map can be accessed through the following [link](https://ceinna.github.io/beyonce-rwt-2023/).
 
 
 

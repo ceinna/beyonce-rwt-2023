@@ -19,11 +19,6 @@ var mapOptions = {
 // instantiate the map
 const map = new mapboxgl.Map(mapOptions);
 
-// add a navitation control
-const nav = new mapboxgl.NavigationControl();
-map.addControl(nav, 'top-right');
-
-
 // ---------------------------------------------------------------
 
 //  UPLOAD TWO IMAGES FOR TWO MAKERS AND HAVE THE MARKERS DISPLAYED BASED ON DIFFERENT CRITERIA (NUMBER OF NIGHTS PERFORMED)

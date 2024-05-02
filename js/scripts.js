@@ -53,6 +53,7 @@ map.on('load', function () {
 // ---------------------------------------------------------------
 
 // ADD TOGGLE FUNCTIONALITY TO BUTTONS
+
 var button = document.getElementById('toggleButton');
 var isNorthAmerica = true;
 
@@ -80,6 +81,7 @@ button.addEventListener('click', function () {
 
 
 // ADD FUNCTIONALITY TO COLLAPSIBLE
+// from https://www.w3schools.com/howto/howto_js_collapsible.asp
 
 var coll = document.getElementsByClassName("collapsible");
 var i;

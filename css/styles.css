@@ -1,6 +1,11 @@
 /* GENERAL FORMATTING */
-* {
-    font-family: sans-serif;
+html,
+head,
+body,
+#main-container {
+    height: 100%;
+    width: 100%;
+    font-family: Helvetica, Geneva, Tahoma, sans-serif;
 }
 
 body {
@@ -8,12 +13,58 @@ body {
     padding: 0;
 }
 
+#main-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+nav {
+    padding: 1rem;
+    border-bottom: 1px solid #000;
+    display: flex;
+    background-color: black;
+}
+
+.disco-emoji {
+    font-size: 30px;
+    margin-right: 5px;
+    margin-top: 15px;
+}
+
+#content-container {
+    flex-grow: 1;
+    display: flex;
+    min-height: 0;
+}
+
+
 /* MAP FORMATTING */
 #map-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+}
+
+/* must go after map-container */
+.title {
+    font-weight: 600;
+    font-size: 30px;
+    color: silver
+}
+
+@media only screen and (max-width: 800px) {
+    #content-container {
+        flex-direction: column-reverse;
+    }
+
+    #map-container {
+        height: 60%;
+        flex-shrink: 0;
+    }
+
+    #sidebar {
+        width: 100%;
+    }
 }
 
 .mapboxgl-popup {
@@ -28,14 +79,15 @@ body {
 /* SIDEBAR FORMATTING */
 #sidebar {
     position: absolute;
-    top: 20px;
+    top: 250px;
     left: 20px;
     z-index: 1;
-    width: 325px;
     background: #ececec;
-    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0px 0px 2px 2px rgb(116 116 116)
+    width: 348px;
+    padding: 1rem;
+    overflow-y: scroll;
+    box-sizing: border-box;
 }
 
 #sidebar h1 {
@@ -50,12 +102,6 @@ body {
     display: flex;
 }
 
-#sidebar .disco-emoji {
-    font-size: 40px;
-    margin-right: 5px;
-    margin-top: 15px;
-}
-
 #sidebar .source-code-link {
     text-decoration: none;
     font-size: 10px;
@@ -68,7 +114,8 @@ body {
     color: black
 }
 
-/* LEGEND WITHIN SIDEBAR FORMATTING */
+
+/* LEGEND FORMATTING */
 .legend {
     position: absolute;
     float: right;
@@ -151,7 +198,7 @@ h3 {
 }
 
 
-/* BUTTONS UNDER THE SIDEBAR FORMATTING */
+/* BUTTON FORMATTING */
 #toggleButton {
     display: block;
     position: fixed;
@@ -210,7 +257,7 @@ h3 {
     }
 }
 
-.button:after{
+.button:after {
     z-index: -1;
     content: "";
     position: absolute;

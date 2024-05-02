@@ -9,8 +9,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2Vpbm5hIiwiYSI6ImNsdWx1Nnl1ZTE1enkya28xc3gxe
 var mapOptions = {
     container: 'map-container', // container ID
     style: 'mapbox://styles/mapbox/dark-v11', // dark basemap
-    center: [1.39433, 50], // starting position [lng, lat]
-    zoom: 4, // starting zoom,
+    center: [3, 51], // starting position [lng, lat]
+    zoom: 3.9, // starting zoom,
     projection: 'globe',
     height: 3,
     interactive: false //make map static

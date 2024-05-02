@@ -10,45 +10,56 @@
 </head>
 
 <body>
-    <div id="sidebar">
-        <div class="header">
-            <span class="disco-emoji">🪩</span>
-            <h1>Beyoncé: Renaissance World Tour (2023)</h1>
-        </div>
-        <p>In 2023, Beyoncé embarked on a world tour to perform hit songs from her seventh studio album, Act I:
-            Renaissance.</p>
-        <p>The Renaissance World Tour is Beyoncé's highest-grossing tour to date. Her tour, alone, contributed $4.5
-            billion to the American economy.</p>
-        <p><strong>Click a marker for details on venues, attendance, and revenue</strong></p>
-        
-        <a class="source-code-link" href="https://github.com/ceinna/assignment-3">Source Code</a>
-    </div>
-    </div>
+    <div id="main-container">
 
-    <!-- LEGEND -->
-    <div class="legend">
-        <div>
-            <h3>Legend</h3>
-            <div class="legend-key">
-                <img src="images/silver-disco.png">
-                <span>Single Performance Venue</span>
+        <!-- TITLE -->
+        <nav>
+            <div class="title">
+                <span class="disco-emoji">🪩</span> Beyoncé: Renaissance World Tour (2023)
             </div>
-        </div>
-        <div>
-            <div class="legend-key">
-                <img src="images/gold-disco.png">
-                <span>Multiple Performance Venue</span>
+        </nav>
+
+        <!-- CONTENT -->
+        <div id="content-container">
+            <div id="sidebar">
+                <p>In 2023, Beyoncé embarked on a world tour to perform hit songs from her seventh studio album, Act I:
+                    Renaissance.</p>
+                <p>The Renaissance World Tour is Beyoncé's highest-grossing tour to date. Her tour, alone, contributed
+                    $4.5
+                    billion to the American economy.</p>
+                <p><strong>Click a marker for details on venues, attendance, and revenue</strong></p>
+
+                <a class="source-code-link" href="https://github.com/ceinna/assignment-3">Source Code</a>
             </div>
+
+            <!-- LEGEND -->
+            <div class="legend">
+                <div>
+                    <h3>Legend</h3>
+                    <div class="legend-key">
+                        <img src="images/silver-disco.png">
+                        <span>Single Performance Venue</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="legend-key">
+                        <img src="images/gold-disco.png">
+                        <span>Multiple Performance Venue</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+
+            <div>
+                <button id="toggleButton" class="button">Jump to North America Tour Locations</button>
+            </div>
+
+            <!-- MAP -->
+            <div id="map-container"></div>
         </div>
     </div>
 
-    <!-- BUTTON -->
-
-    <div>
-        <button id="toggleButton" class="button">Jump to North America Tour Locations</button>
-    </div>
-
-    <div id="map-container"></div>
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
     <script src="js/beyonce-data.js"></script>
     <script src="js/scripts.js"></script>

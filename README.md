@@ -1,6 +1,6 @@
 # The 2023 Beyoncé Renaissance World Tour
 
-This is a repo of code for the third assignment for the Advanced GIS: Interactive Web Mapping and Spatial Data Visualization course at NYU Wagner, Spring 2024.
+This is a repo of code for the third and final assignments for the Advanced GIS: Interactive Web Mapping and Spatial Data Visualization course at NYU Wagner, Spring 2024.
 
 A dataset was generated using Wikipedia data for the [2023 Beyoncé Renaissance World Tour](https://en.wikipedia.org/wiki/Renaissance_World_Tour) [see: Tour Dates section]. 
 In total, 39 unique venues were identified for a total of 56 tour dates.

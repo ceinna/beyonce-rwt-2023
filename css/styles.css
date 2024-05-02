@@ -109,7 +109,7 @@ nav {
 .dropdown {
     position: relative;
     display: inline-block;
-    width: 350px;
+    width: 365px;
 }
 
 .dropdown-content {
@@ -135,10 +135,11 @@ table, th, td {
 
 th {
     background-color: silver;
+    font-size: 13px;
 }
 
 td {
-    font-size: 12px;
+    font-size: 10.5px;
 }
 
 

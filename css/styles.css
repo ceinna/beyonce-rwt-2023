@@ -69,37 +69,29 @@ nav {
 
 .mapboxgl-popup {
     font-size: 12px;
+    z-index: 1000000;
 }
 
 .mapboxgl-popup-content {
     padding: 10px;
+    width: 250px;
+    line-height: 7px;
 }
 
 
 /* SIDEBAR FORMATTING */
 #sidebar {
-    position: absolute;
-    top: 250px;
-    left: 20px;
-    z-index: 1;
-    background: #ececec;
-    border-radius: 10px;
-    width: 348px;
+    width: 350px;
     padding: 1rem;
+    font-size: 0.85rem;
     overflow-y: scroll;
     box-sizing: border-box;
-}
-
-#sidebar h1 {
-    font-size: 24px
-}
-
-#sidebar p {
-    font-size: 14px;
-}
-
-#sidebar .header {
-    display: flex;
+    /* position: absolute;
+    top: 250px;
+    left: 20px;
+    z-index: 1; */
+    background: #cccccc;
+    /* border-radius: 10px; */
 }
 
 #sidebar .source-code-link {
@@ -123,7 +115,7 @@ nav {
     padding: 10px;
     bottom: 20 px;
     right: 15px;
-    width: 238px;
+    width: 242px;
     z-index: 1;
     line-height: 18px;
     margin-bottom: 12px;
@@ -161,6 +153,7 @@ nav {
 
 h3 {
     margin-top: 0;
+    line-height: 10px;
 }
 
 .legend-key {
@@ -203,16 +196,17 @@ h3 {
     display: block;
     position: fixed;
     margin: 0px auto;
-    width: 250px;
+    width: 260px;
     height: 40px;
     padding: 15px;
     border: none;
     font-size: 12px;
+    font-weight: bold;
     text-align: center;
     z-index: 10000;
     bottom: 40px;
     /* distance from bottom: helps place button directly under sidebar*/
-    right: 20px;
+    right: 15px;
     outline: none;
     color: rgb(255, 255, 255);
     background: #111;

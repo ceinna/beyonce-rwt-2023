@@ -61,7 +61,9 @@ button.addEventListener('click', function () {
     if (isNorthAmerica) {
         map.flyTo({
             center: [-92, 39],
-            zoom: 3.4
+            zoom: 3.4,
+            pitch: 0, // Set the pitch to 0 degrees to make the projection not tilted
+            bearing: 0 // Set the bearing to north
         });
         button.innerHTML = 'Jump to European Tour Locations';
         isNorthAmerica = false;
@@ -77,13 +79,19 @@ button.addEventListener('click', function () {
 });
 
 
-// ADD FUNCTIONALITY TO DROP DOWN MENU
+// ADD FUNCTIONALITY TO COLLAPSIBLE
 
-function toggleDropdown() {
-    var dropdownContent = document.getElementById("dropdownContent");
-    if (dropdownContent.style.display === "block") {
-        dropdownContent.style.display = "none";
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
     } else {
-        dropdownContent.style.display = "block";
+      content.style.maxHeight = content.scrollHeight + "px";
     }
+  });
 }

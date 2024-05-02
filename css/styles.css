@@ -81,24 +81,64 @@ nav {
 
 /* SIDEBAR FORMATTING */
 #sidebar {
-    width: 350px;
+    width: 400px;
     padding: 1rem;
     font-size: 1rem;
     overflow-y: scroll;
     box-sizing: border-box;
     background: #cccccc;
+    position: relative;
 }
 
 #sidebar .source-code-link {
     text-decoration: none;
-    font-size: 12px;
-    color: grey
+    font-size: 13.5px;
+    color: grey;
+    position: absolute;
+    bottom: 20px;
 }
 
 #sidebar .source-code-link:hover {
     text-decoration: underline;
     font-size: 12px;
     color: black
+}
+
+/* DROP DOWN FORMATTING */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 350px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #d8d8d8;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px 12px;
+    z-index: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: silver;
+}
+
+td {
+    font-size: 12px;
 }
 
 

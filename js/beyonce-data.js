@@ -7,8 +7,8 @@ var beyonceData = [
         "Longitude": 18.00026,
         "Latitude": 59.37259,
         "Nights": 2,
-        "Attendance": "90,169",
-        "Revenue": "$9,802,155"
+        "Attendance": 90169,
+        "Revenue": 9802155
     },
     {
         "First Date": "May 14, 2023",
@@ -18,8 +18,8 @@ var beyonceData = [
         "Longitude": 4.33459,
         "Latitude": 50.89591,
         "Nights": 1,
-        "Attendance": "53,062",
-        "Revenue": "$6,529,627"
+        "Attendance": 53062,
+        "Revenue": 6529627
     },
     {
         "First Date": "May 17, 2023",
@@ -29,8 +29,8 @@ var beyonceData = [
         "Longitude": -3.18245,
         "Latitude": 51.47833,
         "Nights": 1,
-        "Attendance": "52,756",
-        "Revenue": "$6,967,662"
+        "Attendance": 52756,
+        "Revenue": 6967662
     },
     {
         "First Date": "May 20, 2023",
@@ -40,8 +40,8 @@ var beyonceData = [
         "Longitude": -3.24056,
         "Latitude": 55.94203,
         "Nights": 1,
-        "Attendance": "55,834",
-        "Revenue": "$7,872,596"
+        "Attendance": 55834,
+        "Revenue": 7872596
     },
     {
         "First Date": "May 23, 2023",
@@ -51,8 +51,8 @@ var beyonceData = [
         "Longitude": -1.38817,
         "Latitude": 54.91443,
         "Nights": 1,
-        "Attendance": "44,790",
-        "Revenue": "$6,217,446"
+        "Attendance": 44790,
+        "Revenue": 6217446
     },
     {
         "First Date": "May 26, 2023",
@@ -62,8 +62,8 @@ var beyonceData = [
         "Longitude": 2.36012,
         "Latitude": 48.92446,
         "Nights": 1,
-        "Attendance": "68,624",
-        "Revenue": "$9,402,605"
+        "Attendance": 68624,
+        "Revenue": 9402605
     },
     {
         "First Date": "May 29, 2023",
@@ -73,8 +73,8 @@ var beyonceData = [
         "Longitude": -0.06685,
         "Latitude": 51.60415,
         "Nights": 5,
-        "Attendance": "240,330",
-        "Revenue": "$38,986,169"
+        "Attendance": 240330,
+        "Revenue": 38986169
     },
     {
         "First Date": "June 8, 2023",
@@ -84,8 +84,8 @@ var beyonceData = [
         "Longitude": 2.15747,
         "Latitude": 41.36471,
         "Nights": 1,
-        "Attendance": "52,889",
-        "Revenue": "$6,694,569"
+        "Attendance": 52889,
+        "Revenue": 6694569
     },
     {
         "First Date": "June 11, 2023",
@@ -95,8 +95,8 @@ var beyonceData = [
         "Longitude": 5.39586,
         "Latitude": 43.26978,
         "Nights": 1,
-        "Attendance": "56,352",
-        "Revenue": "$7,070,570"
+        "Attendance": 56352,
+        "Revenue": 7070570
     },
     {
         "First Date": "June 15, 2023",
@@ -106,8 +106,8 @@ var beyonceData = [
         "Longitude": 6.87504,
         "Latitude": 50.93364,
         "Nights": 1,
-        "Attendance": "41,166",
-        "Revenue": "$5,437,729"
+        "Attendance": 41166,
+        "Revenue": 5437729
     },
     {
         "First Date": "June 17, 2023",
@@ -117,8 +117,8 @@ var beyonceData = [
         "Longitude": 4.94186,
         "Latitude": 52.31422,
         "Nights": 2,
-        "Attendance": "97,657",
-        "Revenue": "$12,817,577"
+        "Attendance": 97657,
+        "Revenue": 12817577
     },
     {
         "First Date": "June 21, 2023",
@@ -128,8 +128,8 @@ var beyonceData = [
         "Longitude": 9.8986,
         "Latitude": 53.58704,
         "Nights": 1,
-        "Attendance": "43,335",
-        "Revenue": "$5,757,020"
+        "Attendance": 43335,
+        "Revenue": 5757020
     },
     {
         "First Date": "June 24, 2023",
@@ -139,8 +139,8 @@ var beyonceData = [
         "Longitude": 8.64536,
         "Latitude": 50.06863,
         "Nights": 1,
-        "Attendance": "42,280",
-        "Revenue": "$5,852,675"
+        "Attendance": 42280,
+        "Revenue": 5852675
     },
     {
         "First Date": "June 27, 2023",
@@ -150,8 +150,8 @@ var beyonceData = [
         "Longitude": 21.04568,
         "Latitude": 52.2394,
         "Nights": 2,
-        "Attendance": "108,141",
-        "Revenue": "$12,378,058"
+        "Attendance": 108141,
+        "Revenue": 12378058
     },
     {
         "First Date": "July 8, 2023",
@@ -161,8 +161,8 @@ var beyonceData = [
         "Longitude": -79.38838,
         "Latitude": 43.64156,
         "Nights": 2,
-        "Attendance": "76,577",
-        "Revenue": "$18,340,330"
+        "Attendance": 76577,
+        "Revenue": 18340330
     },
     {
         "First Date": "July 12, 2023",
@@ -172,8 +172,8 @@ var beyonceData = [
         "Longitude": -75.16751,
         "Latitude": 39.90091,
         "Nights": 1,
-        "Attendance": "52,181",
-        "Revenue": "$11,976,831"
+        "Attendance": 52181,
+        "Revenue": 11976831
     },
     {
         "First Date": "July 15, 2023",
@@ -183,8 +183,8 @@ var beyonceData = [
         "Longitude": -86.77132,
         "Latitude": 36.16661,
         "Nights": 1,
-        "Attendance": "44,742",
-        "Revenue": "$9,412,176"
+        "Attendance": 44742,
+        "Revenue": 9412176
     },
     {
         "First Date": "July 17, 2023",
@@ -194,8 +194,8 @@ var beyonceData = [
         "Longitude": -85.64333,
         "Latitude": 38.11528,
         "Nights": 1,
-        "Attendance": "41,818",
-        "Revenue": "$6,450,896"
+        "Attendance": 41818,
+        "Revenue": 6450896
     },
     {
         "First Date": "July 20, 2023",
@@ -205,8 +205,8 @@ var beyonceData = [
         "Longitude": -93.22496,
         "Latitude": 44.97617,
         "Nights": 1,
-        "Attendance": "39,415",
-        "Revenue": "$8,217,178"
+        "Attendance": 39415,
+        "Revenue": 8217178
     },
     {
         "First Date": "July 22, 2023",
@@ -216,8 +216,8 @@ var beyonceData = [
         "Longitude": -87.61671,
         "Latitude": 41.86257,
         "Nights": 2,
-        "Attendance": "97,686",
-        "Revenue": "$30,115,863"
+        "Attendance": 97686,
+        "Revenue": 30115863
     },
     {
         "First Date": "July 26, 2023",
@@ -227,8 +227,8 @@ var beyonceData = [
         "Longitude": -83.04561,
         "Latitude": 42.33997,
         "Nights": 1,
-        "Attendance": "44,554",
-        "Revenue": "$9,963,756"
+        "Attendance": 44554,
+        "Revenue": 9963756
     },
     {
         "First Date": "July 29, 2023",
@@ -238,8 +238,8 @@ var beyonceData = [
         "Longitude": -74.0749,
         "Latitude": 40.81354,
         "Nights": 2,
-        "Attendance": "106,056",
-        "Revenue": "$33,082,997"
+        "Attendance": 106056,
+        "Revenue": 33082997
     },
     {
         "First Date": "August 1, 2023",
@@ -249,8 +249,8 @@ var beyonceData = [
         "Longitude": -71.26442,
         "Latitude": 42.09114,
         "Nights": 1,
-        "Attendance": "49,740",
-        "Revenue": "$13,801,160"
+        "Attendance": 49740,
+        "Revenue": 13801160
     },
     {
         "First Date": "August 5, 2023",
@@ -260,8 +260,8 @@ var beyonceData = [
         "Longitude": -76.86393,
         "Latitude": 38.90762,
         "Nights": 2,
-        "Attendance": "97,909",
-        "Revenue": "$29,392,299"
+        "Attendance": 97909,
+        "Revenue": 29392299
     },
     {
         "First Date": "August 9, 2023",
@@ -271,8 +271,8 @@ var beyonceData = [
         "Longitude": -80.85377,
         "Latitude": 35.22528,
         "Nights": 1,
-        "Attendance": "53,612",
-        "Revenue": "$12,227,012"
+        "Attendance": 53612,
+        "Revenue": 12227012
     },
     {
         "First Date": "August 11, 2023",
@@ -282,8 +282,8 @@ var beyonceData = [
         "Longitude": -84.40089,
         "Latitude": 33.75529,
         "Nights": 3,
-        "Attendance": "156,317",
-        "Revenue": "$39,849,890"
+        "Attendance": 156317,
+        "Revenue": 39849890
     },
     {
         "First Date": "August 16, 2023",
@@ -293,8 +293,8 @@ var beyonceData = [
         "Longitude": -82.50334,
         "Latitude": 27.97583,
         "Nights": 1,
-        "Attendance": "55,408",
-        "Revenue": "$13,158,166"
+        "Attendance": 55408,
+        "Revenue": 13158166
     },
     {
         "First Date": "August 18, 2023",
@@ -304,8 +304,8 @@ var beyonceData = [
         "Longitude": -80.23962,
         "Latitude": 25.95832,
         "Nights": 1,
-        "Attendance": "47,487",
-        "Revenue": "$14,362,704"
+        "Attendance": 47487,
+        "Revenue": 14362704
     },
     {
         "First Date": "August 21, 2023",
@@ -315,8 +315,8 @@ var beyonceData = [
         "Longitude": -90.18834,
         "Latitude": 38.63242,
         "Nights": 1,
-        "Attendance": "45,836",
-        "Revenue": "$7,064,451"
+        "Attendance": 45836,
+        "Revenue": 7064451
     },
     {
         "First Date": "August 24, 2023",
@@ -326,8 +326,8 @@ var beyonceData = [
         "Longitude": -112.26268,
         "Latitude": 33.52768,
         "Nights": 1,
-        "Attendance": "54,705",
-        "Revenue": "$8,226,165"
+        "Attendance": 54705,
+        "Revenue": 8226165
     },
     {
         "First Date": "August 26, 2023",
@@ -337,8 +337,8 @@ var beyonceData = [
         "Longitude": -115.18338,
         "Latitude": 36.09139,
         "Nights": 2,
-        "Attendance": "86,465",
-        "Revenue": "$25,784,512"
+        "Attendance": 86465,
+        "Revenue": 25784512
     },
     {
         "First Date": "August 30, 2023",
@@ -348,8 +348,8 @@ var beyonceData = [
         "Longitude": -121.96989,
         "Latitude": 37.40328,
         "Nights": 1,
-        "Attendance": "49,613",
-        "Revenue": "$15,402,846"
+        "Attendance": 49613,
+        "Revenue": 15402846
     },
     {
         "First Date": "September 1, 2023",
@@ -359,8 +359,8 @@ var beyonceData = [
         "Longitude": -118.33852,
         "Latitude": 33.95197,
         "Nights": 3,
-        "Attendance": "155,567",
-        "Revenue": "$45,540,402"
+        "Attendance": 155567,
+        "Revenue": 45540402
     },
     {
         "First Date": "September 11, 2023",
@@ -370,8 +370,8 @@ var beyonceData = [
         "Longitude": -123.11211,
         "Latitude": 49.27678,
         "Nights": 1,
-        "Attendance": "38,342",
-        "Revenue": "$7,923,348"
+        "Attendance": 38342,
+        "Revenue": 7923348
     },
     {
         "First Date": "September 14, 2023",
@@ -381,8 +381,8 @@ var beyonceData = [
         "Longitude": -122.33296,
         "Latitude": 47.59518,
         "Nights": 1,
-        "Attendance": "56,763",
-        "Revenue": "$12,459,518"
+        "Attendance": 56763,
+        "Revenue": 12459518
     },
     {
         "First Date": "September 21, 2023",
@@ -392,8 +392,8 @@ var beyonceData = [
         "Longitude": -97.09254,
         "Latitude": 32.74787,
         "Nights": 1,
-        "Attendance": "52,953",
-        "Revenue": "$13,849,491"
+        "Attendance": 52953,
+        "Revenue": 13849491
     },
     {
         "First Date": "September 23, 2023",
@@ -403,8 +403,8 @@ var beyonceData = [
         "Longitude": -95.40682,
         "Latitude": 29.68183,
         "Nights": 2,
-        "Attendance": "123,308",
-        "Revenue": "$31,332,332"
+        "Attendance": 123308,
+        "Revenue": 31332332
     },
     {
         "First Date": "September 27, 2023",
@@ -414,8 +414,8 @@ var beyonceData = [
         "Longitude": -90.08151,
         "Latitude": 29.95065,
         "Nights": 1,
-        "Attendance": "49,265",
-        "Revenue": "$10,802,708"
+        "Attendance": 49265,
+        "Revenue": 10802708
     },
     {
         "First Date": "October 1, 2023",
@@ -425,8 +425,8 @@ var beyonceData = [
         "Longitude": -94.48651,
         "Latitude": 39.04634,
         "Nights": 1,
-        "Attendance": "53,150",
-        "Revenue": "$9,290,057"
+        "Attendance": 53150,
+        "Revenue": 9290057
     }
 
 ]

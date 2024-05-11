@@ -34,8 +34,8 @@ map.on('load', function () {
         var popupContent = `<h3>${tourDate.City},  ${tourDate.Country}</h3>` +
             `<p>Stadium: <strong>${tourDate.Venue}</strong> </p>` +
             `<p>First performance date: <strong>${tourDate["First Date"]}</strong></p>` +
-            `<p>Total recorded attendance: <strong>${tourDate.Attendance}</strong></p>` +
-            `<p>Total revenue earned: <strong>${tourDate.Revenue}</strong></p>`;
+            `<p>Total recorded attendance: <strong>${numeral(tourDate.Attendance).format('0.0a')}</strong></p>` +
+            `<p>Total revenue earned: <strong>${numeral(tourDate.Revenue).format('($0.00 a)')}</strong></p>`;
 
         new mapboxgl.Marker(el)
             .setLngLat([tourDate.Longitude, tourDate.Latitude])

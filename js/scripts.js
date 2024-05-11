@@ -31,11 +31,11 @@ map.on('load', function () {
         el.style.backgroundImage = 'url(' + imageUrl + ')';
 
         // Create a popup content string with HTML markup
-        var popupContent = `<h3>Venue Details</h3>` +
-            `<p><strong>City, Country:</strong> ${tourDate.City},  ${tourDate.Country} </p>` +
-            `<p><strong>First performance date:</strong> ${tourDate["First Date"]}</p>` +
-            `<p><strong>Total recorded attendance:</strong> ${tourDate.Attendance}</p>` +
-            `<p><strong>Total revenue earned:</strong> ${tourDate.Revenue}</p>`;
+        var popupContent = `<h3>${tourDate.City},  ${tourDate.Country}</h3>` +
+            `<p>Stadium: <strong>${tourDate.Venue}</strong> </p>` +
+            `<p>First performance date: <strong>${tourDate["First Date"]}</strong></p>` +
+            `<p>Total recorded attendance: <strong>${tourDate.Attendance}</strong></p>` +
+            `<p>Total revenue earned: <strong>${tourDate.Revenue}</strong></p>`;
 
         new mapboxgl.Marker(el)
             .setLngLat([tourDate.Longitude, tourDate.Latitude])

@@ -85,21 +85,6 @@ nav {
     color: silver
 }
 
-@media only screen and (max-width: 800px) {
-    #content-container {
-        flex-direction: column-reverse;
-    }
-
-    #map-container {
-        height: 60%;
-        flex-shrink: 0;
-    }
-
-    #sidebar {
-        width: 100%;
-    }
-}
-
 .mapboxgl-popup {
     font-size: 12px;
     z-index: 1000000;
@@ -119,7 +104,7 @@ nav {
     width: 400px;
     padding: 1rem;
     font-size: 1rem;
-    overflow-y: scroll;
+    overflow-y: auto;
     box-sizing: border-box;
     background: #cccccc;
     position: relative;
@@ -133,6 +118,26 @@ nav {
 #sidebar .sidebar-links:hover {
     text-decoration: underline;
     color: white
+}
+
+@media only screen and (max-width: 800px) {
+    #content-container {
+        flex-direction: column-reverse;
+    }
+
+    #map-container {
+        height: 60%;
+        flex-shrink: 0;
+    }
+
+    #sidebar {
+        width: 100%;
+    }
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
 }
 
 /* COLLAPSIBLE FORMATTING */
@@ -209,10 +214,8 @@ td {
 /* LEGEND FORMATTING */
 .legend {
     position: absolute;
-    float: right;
-    top: 73%;
+    bottom: 80px;
     padding: 10px;
-    /* bottom: 25 px; */
     right: 15px;
     width: 240px;
     z-index: 1;
@@ -304,7 +307,7 @@ h3 {
     text-align: center;
     z-index: 10000;
     bottom: 40px;
-    /* distance from bottom: helps place button directly under sidebar*/
+    /* distance from bottom: helps place button directly under legend*/
     right: 15px;
     outline: none;
     color: rgb(255, 255, 255);

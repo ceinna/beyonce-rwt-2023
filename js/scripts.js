@@ -47,10 +47,23 @@ map.on('load', function () {
             `<tr style="border-bottom: 1.5px solid #ddd;"><td style="padding: 8px; width: 36%; text-align: left; border-color: transparent;">Revenue earned:</td><td style="padding: 8px; width: 64%; text-align: center; border-color: transparent;"><strong>${numeral(tourDate.Revenue).format('($0.00 a)')}</strong></td></tr>` +
             `</table></div>`;
 
-        new mapboxgl.Marker(el)
+        var marker = new mapboxgl.Marker(el)
             .setLngLat([tourDate.Longitude, tourDate.Latitude])
-            .setPopup(new mapboxgl.Popup({ maxWidth: 'none' }).setHTML(popupContent))
             .addTo(map);
+
+        console.log("Marker created", marker);
+
+        var popup = new mapboxgl.Popup({ maxWidth: 'none' }).setHTML(popupContent);
+
+        marker.getElement().addEventListener('mouseenter', function () {
+            console.log("Mouse enter");
+            popup.addTo(map);
+        });
+
+        marker.getElement().addEventListener('mouseleave', function () {
+            console.log("Mouse leave");
+            popup.remove();
+        });
     });
 });
 

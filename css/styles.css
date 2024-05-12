@@ -167,23 +167,33 @@ nav {
 table {
     width: 100%;
     border-collapse: collapse;
+    border: 2px solid grey; /* Set the border properties */
 }
 
 table,
 th,
 td {
-    border: 1px solid black;
+    border-top: 1px solid silver;
     padding: 8px;
     text-align: center;
 }
 
 th {
-    background-color: silver;
+    background-color: #eee;
     font-size: 13px;
 }
 
 td {
     font-size: 10.5px;
+}
+
+.content table tbody tr:last-child {
+    background-color: #fddc5c;
+}
+
+ /* Hover effect for table rows */
+ .content table tbody tr:hover {
+    background-color: lightgrey;
 }
 
 

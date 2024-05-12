@@ -345,4 +345,6 @@ h3 {
 
 .mapboxgl-popup-content {
     width: 300px;
+    background-color: silver;
+    color: #000;
 }

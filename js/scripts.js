@@ -33,7 +33,14 @@ map.on('load', function () {
         // Create a popup content string with HTML markup and format as table
         var popupContent = `<div style="width: 300px; padding: 5px; box-sizing: border-box;">` +
             `<h3 style="text-align: center;">${tourDate.City},  ${tourDate.Country}</h3>` +
-            `<table style="border-collapse: collapse; width: 100%;">` +
+
+            `<style>
+                .popup-table tr:hover {
+                    background-color: #f0f0f0;
+                }
+            </style>` +
+
+            `<table class="popup-table" style="border-collapse: collapse; width: 100%;">` +
             `<tr style="border-bottom: 1.5px solid #ddd;"><td style="padding: 8px; width: 36%; text-align: left; border-color: transparent;">Stadium:</td><td style="padding: 8px; width: 64%; text-align: center; border-color: transparent;"><strong>${tourDate.Venue}</strong></td></tr>` +
             `<tr style="border-bottom: 1.5px solid #ddd;"><td style="padding: 8px; width: 36%; text-align: left; border-color: transparent;">First performance:</td><td style="padding: 8px; width: 64%; text-align: center; border-color: transparent;"><strong>${tourDate["First Date"]}</strong></td></tr>` +
             `<tr style="border-bottom: 1.5px solid #ddd;"><td style="padding: 8px; width: 36%; text-align: left; border-color: transparent;">Attendance:</td><td style="padding: 8px; width: 64%; text-align: center; border-color: transparent;"><strong>${numeral(tourDate.Attendance).format('0.0a')}</strong></td></tr>` +

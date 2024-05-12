@@ -53,6 +53,7 @@ nav {
     color: #333333;
     margin-top: 12px;
 }
+
 .nav-link:hover {
     text-decoration: underline;
     font-size: 15px;
@@ -116,7 +117,7 @@ nav {
     color: black;
 }
 
-#sidebar .sidebar-links:hover{
+#sidebar .sidebar-links:hover {
     text-decoration: underline;
     color: white
 }
@@ -133,39 +134,44 @@ nav {
     text-align: left;
     outline: none;
     font-size: 15px;
-  }
-  
-  .collapsible:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
+}
+
+.collapsible:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
     position: relative;
     left: 10px;
-  }
+}
 
-  .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-  }
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
 
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .collapsible:hover {
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
     background-color: grey;
-    color:#ffffff;
-  }
-  
-  /* Style the collapsible content. Note: hidden by default */
-  .content {
+    color: #ffffff;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-  }
+}
 
-  /* TABLE FORMATTING (WITHIN COLLAPSIBLE) */
+/* TABLE FORMATTING (WITHIN COLLAPSIBLE) */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
@@ -335,4 +341,8 @@ h3 {
     left: 0;
     top: 0;
     border-radius: 10px;
+}
+
+.mapboxgl-popup-content {
+    width: 300px;
 }

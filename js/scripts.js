@@ -30,16 +30,19 @@ map.on('load', function () {
         el.className = 'marker';
         el.style.backgroundImage = 'url(' + imageUrl + ')';
 
-        // Create a popup content string with HTML markup
-        var popupContent = `<h3>${tourDate.City},  ${tourDate.Country}</h3>` +
-            `<p>Stadium: <strong>${tourDate.Venue}</strong> </p>` +
-            `<p>First performance date: <strong>${tourDate["First Date"]}</strong></p>` +
-            `<p>Total recorded attendance: <strong>${numeral(tourDate.Attendance).format('0.0a')}</strong></p>` +
-            `<p>Total revenue earned: <strong>${numeral(tourDate.Revenue).format('($0.00 a)')}</strong></p>`;
+        // Create a popup content string with HTML markup and format as table
+        var popupContent = `<div style="width: 300px; padding: 5px; box-sizing: border-box;">` +
+            `<h3 style="text-align: center;">${tourDate.City},  ${tourDate.Country}</h3>` +
+            `<table style="border-collapse: collapse; width: 100%;">` +
+            `<tr style="border-bottom: 1.5px solid #ddd;"><td style="padding: 8px; width: 36%; text-align: left; border-color: transparent;">Stadium:</td><td style="padding: 8px; width: 64%; text-align: center; border-color: transparent;"><strong>${tourDate.Venue}</strong></td></tr>` +
+            `<tr style="border-bottom: 1.5px solid #ddd;"><td style="padding: 8px; width: 36%; text-align: left; border-color: transparent;">First performance:</td><td style="padding: 8px; width: 64%; text-align: center; border-color: transparent;"><strong>${tourDate["First Date"]}</strong></td></tr>` +
+            `<tr style="border-bottom: 1.5px solid #ddd;"><td style="padding: 8px; width: 36%; text-align: left; border-color: transparent;">Attendance:</td><td style="padding: 8px; width: 64%; text-align: center; border-color: transparent;"><strong>${numeral(tourDate.Attendance).format('0.0a')}</strong></td></tr>` +
+            `<tr style="border-bottom: 1.5px solid #ddd;"><td style="padding: 8px; width: 36%; text-align: left; border-color: transparent;">Revenue earned:</td><td style="padding: 8px; width: 64%; text-align: center; border-color: transparent;"><strong>${numeral(tourDate.Revenue).format('($0.00 a)')}</strong></td></tr>` +
+            `</table></div>`;
 
         new mapboxgl.Marker(el)
             .setLngLat([tourDate.Longitude, tourDate.Latitude])
-            .setPopup(new mapboxgl.Popup().setHTML(popupContent))
+            .setPopup(new mapboxgl.Popup({ maxWidth: 'none' }).setHTML(popupContent))
             .addTo(map);
     });
 });
@@ -82,13 +85,13 @@ var coll = document.getElementsByClassName("collapsible");
 var i;
 
 for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
+    coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
 }

@@ -31,14 +31,8 @@ map.on('load', function () {
         el.style.backgroundImage = 'url(' + imageUrl + ')';
 
         // Create a popup content string with HTML markup and format as table
-        var popupContent = `<div style="width: 300px; padding: 5px; box-sizing: border-box;">` +
-            `<h3 style="text-align: center;">${tourDate.City},  ${tourDate.Country}</h3>` +
-
-            `<style>
-                .popup-table tr:hover {
-                    background-color: #f0f0f0;
-                }
-            </style>` +
+        var popupContent = `<div style="width: 300px; max-height: 300px; overflow-y: auto; padding: 5px; box-sizing: border-box;">` +
+            `<h6 style="text-align: center;">${tourDate.City},  ${tourDate.Country}</h6>` +
 
             `<table class="popup-table" style="border-collapse: collapse; width: 100%;">` +
             `<tr style="border-bottom: 1.5px solid #ddd;"><td style="padding: 8px; width: 36%; text-align: left; border-color: transparent;">Stadium:</td><td style="padding: 8px; width: 64%; text-align: center; border-color: transparent;"><strong>${tourDate.Venue}</strong></td></tr>` +

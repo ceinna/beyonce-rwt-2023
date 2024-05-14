@@ -56,11 +56,11 @@
                             Renaissance</strong></a>.<i> Click a marker for details on venues, attendance, and
                         revenue.</i></p>
 
-                <!-- from https://www.w3schools.com/html/html_youtube.asp -->
-                <div class="video-container">
-                    <iframe width="365" height="200"
-                        src="https://www.youtube.com/embed/pAzyYLsndCg?controls=0"></iframe>
-                </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-dark video-modal" data-bs-toggle="modal" data-bs-target="#videoModal">
+                    Experience the Renaissance
+                </button>
+                <br>
 
                 <p>The Renaissance World Tour ("RWT") is Beyoncé's highest-grossing tour to date. Her tour, alone,
                     contributed $4.5 billion to the American economy. </p>
@@ -134,7 +134,7 @@
                 <!-- LEGEND -->
                 <div class="legend">
                     <div>
-                        <h3>Legend</h3>
+                        <h6>Legend</h6>
                         <div class="legend-key">
                             <img src="images/silver-disco.png">
                             <span>Single Performance Venue</span>
@@ -158,6 +158,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade video-modal" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- from https://www.w3schools.com/html/html_youtube.asp -->
+                    <div class="video-container">
+                        <iframe width="1095" height="600"
+                            src="https://www.youtube.com/embed/pAzyYLsndCg?controls=0"></iframe>
+                    </div>
+                    <br>
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Return to the
+                            Map</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Mapbox -->
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
     <!-- jQuery -->

@@ -53,7 +53,10 @@ map.on('load', function () {
 
         console.log("Marker created", marker);
 
-        var popup = new mapboxgl.Popup({ maxWidth: 'none' }).setHTML(popupContent);
+        var popup = new mapboxgl.Popup({ maxWidth: 'none' })
+            .setHTML(popupContent)
+            .setLngLat([tourDate.Longitude, tourDate.Latitude]);
+
 
         marker.getElement().addEventListener('mouseenter', function () {
             console.log("Mouse enter");

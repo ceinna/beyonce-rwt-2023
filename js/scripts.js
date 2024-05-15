@@ -1,7 +1,6 @@
 // ACCESS TOKEN
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2Vpbm5hIiwiYSI6ImNsdWx1Nnl1ZTE1enkya28xc3gxeDE0eG8ifQ.2g1H9RrzSpRkOmNOns7Dpg'
 
-
 // ---------------------------------------------------------------
 
 // ADD BASE MAP AND FUNCTIONALITY
@@ -22,7 +21,6 @@ const map = new mapboxgl.Map(mapOptions);
 // ---------------------------------------------------------------
 
 //  UPLOAD TWO IMAGES FOR TWO MAKERS AND HAVE THE MARKERS DISPLAYED BASED ON DIFFERENT CRITERIA (NUMBER OF NIGHTS PERFORMED)
-// Calculate popup offset dynamically based on its position relative to the viewport
 
 map.on('load', function () {
     beyonceData.forEach(tourDate => {
@@ -31,7 +29,7 @@ map.on('load', function () {
         el.className = 'marker';
         el.style.backgroundImage = 'url(' + imageUrl + ')';
 
-        // Create a popup content string with HTML markup and format as table
+        // create a popup content string with HTML markup and format as table
         var popupContent = `<div style="width: 300px; max-height: 300px; overflow-y: auto; padding: 5px; box-sizing: border-box;">` +
             `<h6 style="text-align: center;">${tourDate.City},  ${tourDate.Country}</h6>` +
 
@@ -42,10 +40,12 @@ map.on('load', function () {
             `<tr style="border-bottom: 1.5px solid #ddd;"><td style="padding: 8px; width: 36%; text-align: left; border-color: transparent;">Revenue earned:</td><td style="padding: 8px; width: 64%; text-align: center; border-color: transparent;"><strong>${numeral(tourDate.Revenue).format('($0.00 a)')}</strong></td></tr>` +
             `</table></div>`;
 
+        // add marker to map
         var marker = new mapboxgl.Marker(el)
             .setLngLat([tourDate.Longitude, tourDate.Latitude])
             .addTo(map);
 
+        // Offset popups: https://docs.mapbox.com/mapbox-gl-js/api/markers/#popup-parameters
         const markerHeight = 15;
         const markerRadius = 15;
         const linearOffset = 15;
@@ -60,11 +60,12 @@ map.on('load', function () {
             'right': [-markerRadius, (markerHeight - markerRadius) * -1]
         };
 
+        // create popups
         var popup = new mapboxgl.Popup({ maxWidth: 'none', offset: popupOffsets })
             .setHTML(popupContent)
             .setLngLat([tourDate.Longitude, tourDate.Latitude]);
 
-
+        // hover function and add popups to map
         marker.getElement().addEventListener('mouseenter', function () {
             console.log("Mouse enter");
             popup.addTo(map);
@@ -85,7 +86,7 @@ var button = document.getElementById('toggleButton');
 var isNorthAmerica = true;
 
 button.addEventListener('click', function () {
-    // Map starts centered on Europe. Button will first read, 'Jump to NA Tour Locations' and when pressed, will do so
+    // map starts centered on Europe. button will first read, 'Jump to NA Tour Locations' and when pressed, will do so
     if (isNorthAmerica) {
         map.flyTo({
             center: [-91, 39],
@@ -95,7 +96,8 @@ button.addEventListener('click', function () {
         });
         button.innerHTML = 'Jump to European Tour Locations';
         isNorthAmerica = false;
-        // Once pressed, button will read 'Jump to European Tour Locations' and when pressed will do so. Button will toggle back and forth with these commands
+
+    // once pressed, button will read 'Jump to European Tour Locations' and when pressed will do so. button will toggle back and forth with these commands
     } else {
         map.flyTo({
             center: [6, 49.5],
@@ -106,6 +108,7 @@ button.addEventListener('click', function () {
     }
 });
 
+// ---------------------------------------------------------------
 
 // ADD FUNCTIONALITY TO COLLAPSIBLE
 // from https://www.w3schools.com/howto/howto_js_collapsible.asp

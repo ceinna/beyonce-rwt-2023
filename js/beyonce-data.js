@@ -1,3 +1,9 @@
+// GEOJSON DATA
+
+// data from https://en.wikipedia.org/wiki/Renaissance_World_Tour
+// manually entered into Google Sheets then used https://csvjson.com/ to covert to JSON
+// used https://labs.mapbox.com/location-helper/#3/40.78/-73.97 to manually find stadium coordinates for Latitude and Longitude
+
 var beyonceData = [
     {
         "First Date": "May 10, 2024",

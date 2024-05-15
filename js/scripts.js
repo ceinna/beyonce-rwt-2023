@@ -47,7 +47,7 @@ map.on('load', function () {
 
         console.log("Marker created", marker);
 
-        var popup = new mapboxgl.Popup({ maxWidth: 'none' })
+        var popup = new mapboxgl.Popup({ maxWidth: 'none', offset: [0, -15] })
             .setHTML(popupContent)
             .setLngLat([tourDate.Longitude, tourDate.Latitude]);
 

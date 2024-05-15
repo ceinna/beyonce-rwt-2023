@@ -46,9 +46,21 @@ map.on('load', function () {
             .setLngLat([tourDate.Longitude, tourDate.Latitude])
             .addTo(map);
 
-        console.log("Marker created", marker);
+        const markerHeight = 15;
+        const markerRadius = 15;
+        const linearOffset = 15;
+        const popupOffsets = {
+            'top': [0, markerHeight],
+            'top-left': [0, linearOffset],
+            'top-right': [0, linearOffset],
+            'bottom': [0, -markerHeight],
+            'bottom-left': [-linearOffset, 0],
+            'bottom-right': [-linearOffset, 0],
+            'left': [markerRadius, (markerHeight - markerRadius) * -1],
+            'right': [-markerRadius, (markerHeight - markerRadius) * -1]
+        };
 
-        var popup = new mapboxgl.Popup({ maxWidth: 'none' })
+        var popup = new mapboxgl.Popup({ maxWidth: 'none', offset: popupOffsets })
             .setHTML(popupContent)
             .setLngLat([tourDate.Longitude, tourDate.Latitude]);
 

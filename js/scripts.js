@@ -61,7 +61,7 @@ map.on('load', function () {
         };
 
         // create popups
-        var popup = new mapboxgl.Popup({ maxWidth: 'none', offset: popupOffsets })
+        var popup = new mapboxgl.Popup({ maxWidth: 'none', offset: popupOffsets, closeButton: false, })
             .setHTML(popupContent)
             .setLngLat([tourDate.Longitude, tourDate.Latitude]);
 

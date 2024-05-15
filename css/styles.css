@@ -13,7 +13,6 @@ h2 {
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-    font-size: 23px;
 }
 
 body {
@@ -39,7 +38,7 @@ body {
     min-height: 0;
 }
 
-/* SOURCE LINK AT TOP RIGHT */
+/* NAVIGATION BAR & SOURCE LINK AT TOP RIGHT */
 nav {
     padding: 1rem;
     border-bottom: 1px solid #000;
@@ -81,12 +80,15 @@ nav {
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 35px;
     color: silver
 }
 
+/* POPUP FORMATTING */
+
 .mapboxgl-popup {
     font-size: 10px !important;
+    border-bottom-color: silver !important;
     z-index: 1000;
 }
 
@@ -97,6 +99,24 @@ nav {
     background-color: silver;
     color: #000;
 }
+
+/* Popup Arrow Formatting */
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color: silver;
+    }
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color: silver;
+    }
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: silver;
+    }
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color: silver;
+    }
 
 
 /* SIDEBAR FORMATTING */
@@ -198,11 +218,6 @@ td {
 
 .content table tbody tr:last-child {
     background-color: #fddc5c;
-}
-
-/* Hover effect for table rows */
-.content table tbody tr:hover {
-    background-color: lightgrey;
 }
 
 

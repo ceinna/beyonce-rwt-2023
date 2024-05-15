@@ -22,6 +22,7 @@ const map = new mapboxgl.Map(mapOptions);
 // ---------------------------------------------------------------
 
 //  UPLOAD TWO IMAGES FOR TWO MAKERS AND HAVE THE MARKERS DISPLAYED BASED ON DIFFERENT CRITERIA (NUMBER OF NIGHTS PERFORMED)
+// Calculate popup offset dynamically based on its position relative to the viewport
 
 map.on('load', function () {
     beyonceData.forEach(tourDate => {
@@ -47,7 +48,7 @@ map.on('load', function () {
 
         console.log("Marker created", marker);
 
-        var popup = new mapboxgl.Popup({ maxWidth: 'none', offset: [0, -15] })
+        var popup = new mapboxgl.Popup({ maxWidth: 'none' })
             .setHTML(popupContent)
             .setLngLat([tourDate.Longitude, tourDate.Latitude]);
 
@@ -63,7 +64,6 @@ map.on('load', function () {
         });
     });
 });
-
 
 // ---------------------------------------------------------------
 

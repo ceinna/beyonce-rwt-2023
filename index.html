@@ -24,7 +24,6 @@
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <!-- End Favicon Generator Link and Meta Tags -->
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -33,7 +32,7 @@
 <body>
     <div id="main-container">
 
-        <!-- TITLE -->
+        <!-- TITLE AND NAVIGATION (SOURCE LINK) -->
         <nav>
             <div class="title">
                 <span class="disco-emoji">🪩</span> Beyoncé: Renaissance World Tour (2023)
@@ -47,6 +46,7 @@
 
         <!-- CONTENT -->
         <div id="content-container">
+            <!-- SIDEBAR -->
             <div id="sidebar">
                 <h2>Welcome to the Renaissance</h2>
 
@@ -56,21 +56,27 @@
                             Renaissance</strong></a>.<i> Click a marker for details on venues, attendance, and
                         revenue.</i></p>
 
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-dark video-modal" data-bs-toggle="modal" data-bs-target="#videoModal">
-                    <strong> Experience the Renaissance </strong>  &nbsp; <i class="fa-solid fa-clapperboard" style="color: #ffffff;"></i>
+                <!-- BUTTON TRIGGER MODAL -->
+                <button type="button" class="btn btn-dark video-modal" data-bs-toggle="modal"
+                    data-bs-target="#videoModal">
+                    <strong> Experience the Renaissance </strong> &nbsp; <i class="fa-solid fa-clapperboard"
+                        style="color: #ffffff;"></i>
                 </button>
                 <br>
 
-                <p>The Renaissance World Tour ("RWT") is Beyoncé's <span style="color: #BD8B00;"><strong>highest-grossing</strong></span> tour to date. Her tour, alone,
-                    contributed <span style="color: #BD8B00;"><strong>$4.5 billion</strong></span> to the American economy. </p>
+                <p>The Renaissance World Tour ("RWT") is Beyoncé's <span
+                        style="color: #BD8B00;"><strong>highest-grossing</strong></span> tour to date. Her tour, alone,
+                    contributed <span style="color: #BD8B00;"><strong>$4.5 billion</strong></span> to the American
+                    economy. </p>
 
+                <!-- COLLAPSIBLE -->
                 <button type="button" class="collapsible"><strong>See how RWT compares to previous
                         tours</strong> &nbsp; <i class="fa-solid fa-caret-up fa-lg"
                         style="color: #3a3b3c; transform: rotate(180deg);"></i></button>
-                <!-- from https://en.wikipedia.org/wiki/List_of_Beyonc%C3%A9_live_performances -->
+
                 <div class="content">
                     <!-- TABLE IN COLLAPSIBLE -->
+                    <!-- from https://en.wikipedia.org/wiki/List_of_Beyonc%C3%A9_live_performances -->
                     <table>
                         <thead>
                             <tr>
@@ -123,7 +129,6 @@
                         </tbody>
                     </table>
                 </div>
-
             </div>
 
 
@@ -149,7 +154,7 @@
                 </div>
 
 
-                <!-- BUTTON -->
+                <!-- TOGGLE BUTTON -->
 
                 <div>
                     <button id="toggleButton" class="button">Jump to North America Tour Locations</button>
@@ -159,8 +164,9 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade video-modal" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <!-- MODAL CONTENT -->
+    <div class="modal fade video-modal" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-body">

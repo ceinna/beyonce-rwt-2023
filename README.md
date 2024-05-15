@@ -24,6 +24,7 @@ A popup was set up to relay venue and revenue statistics in table form when the 
 
 In the sidebar, there is important information and links about the tour. A button opens a modal so visitors can get a glimpse into the Renaissance Tour with official video footage from the European leg of the tour. There is also a collapsible so visitors can compare previous tour revenue to RWT.
 
+## Access
 The map can be accessed through the following [link](https://ceinna.github.io/beyonce-rwt-2023/).
 
 
